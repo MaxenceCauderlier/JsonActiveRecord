@@ -72,17 +72,17 @@ $users = User::queryBuilder()
     ->get();
 
 foreach ($users as $user) {
-    echo $user->name . "<br/>";
+    echo $user->name . " - id : {$user->user_id}<br/>";
     foreach ($user->posts as $post) {
         echo "Post : {$post->title}<br/>";
     }
 }
 
 /*
-John Doe
+John Doe - id : 1
 Post : Hello World
 Post : Hello World 2
-Jane Doe
+Jane Doe - id : 2
 Post : Hello World 3
 */
 
