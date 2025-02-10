@@ -29,6 +29,11 @@ class Post extends JsonActiveRecord
         // third parameter is local key, default to $primaryKey
         return $this->belongsTo(User::class, 'user_id', 'author_user_id');
     }
+
+    public function getDate()
+    {
+        return date('Y-m-d', time());
+    }
 }
 
 @unlink('users.json');
@@ -184,3 +189,7 @@ Jane Doe
 Alice
 Charlie
 */
+
+// Using the Post::getDate() method
+$post = Post::first();
+echo "{$post->date}<br/>";

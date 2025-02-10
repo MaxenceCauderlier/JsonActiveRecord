@@ -108,3 +108,9 @@ $users = User::all();
 echo User::first()->name; // John Doe
 echo User::last()->name; // Johnny Boy
 ```
+
+### Special methods
+
+```php
+echo User::findPK(1)->name; // = User::find('user_id', 1)->name
+```

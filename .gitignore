@@ -1,1 +1,3 @@
-*.json
+*s.json
+
+/vendor/

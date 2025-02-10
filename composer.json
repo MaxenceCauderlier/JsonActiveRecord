@@ -1,0 +1,18 @@
+{
+    "name": "maxkoder/json-active-record",
+    "description": "JsonActiveRecord is a class to deal with JSON files like Active Record",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Maxkoder\\JsonActiveRecord\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Max Koder"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

@@ -1,15 +1,18 @@
 <?php
 
 /**
- * @license MIT License 
+ * @license MIT License
  * @author Maxence Cauderlier <mx.koder@gmail.com>
- * 
+ *
+ * @version 1.0.0
  * @link https://github.com/MaxenceCauderlier/JsonActiveRecord
  */
 
 /**
  * JsonActiveRecord is a class to deal with JSON files like Active Record
  */
+
+ namespace Maxkoder;
 
 abstract class JsonActiveRecord
 {
@@ -407,7 +410,7 @@ abstract class JsonActiveRecord
      * Generate a unique ID for a new record.
      *
      * This method takes the given array of records and finds the highest
-     * existing Primary Key. If no records exist, it reeurns 1. Otherwise, it 
+     * existing Primary Key. If no records exist, it reeurns 1. Otherwise, it
      * adds one to the highest ID and returns the result.
      *
      * @param array $data The array of existing records.
@@ -527,9 +530,10 @@ abstract class JsonActiveRecord
         if ($localKey === false) {
             $localKey = static::$primaryKey;
         }
+        /** @var self $relatedClass */
         $relatedClass::setFilePath($relatedClass::$filePath);
         return $relatedClass::queryBuilder()
-            ->where([$foreignKey, '=', $this->attributes[$localKey]])
+            ->where($foreignKey, '=', $this->attributes[$localKey])
             ->get()[0] ?? null;
     }
 
@@ -548,6 +552,7 @@ abstract class JsonActiveRecord
         if ($localKey === false) {
             $localKey = static::$primaryKey;
         }
+        /** @var self $relatedClass */
         $relatedClass::setFilePath($relatedClass::$filePath);
         return $relatedClass::queryBuilder()
             ->where($foreignKey, '=', $this->attributes[$localKey])
@@ -569,6 +574,7 @@ abstract class JsonActiveRecord
         if ($localKey === false) {
             $localKey = static::$primaryKey;
         }
+        /** @var self $relatedClass */
         $relatedClass::setFilePath($relatedClass::$filePath);
         return $relatedClass::find($localKey, $this->attributes[$foreignKey]);
     }
