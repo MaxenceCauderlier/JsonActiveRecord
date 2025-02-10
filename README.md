@@ -7,10 +7,8 @@ A PHP class to deal with JSON like Active Record
 
 ## Install
 
-Just need to require the class
-
-```php
-require 'JsonActiveRecord.php';
+```bash
+composer require maxkoder/json-active-record
 ```
 
 ## Usage
